@@ -117,16 +117,8 @@ class Boj:
         lang = self.file_info['file_name'].split('.')
         self.file_info['language'] = '.' + lang[1]
         num = int(info)
-        count = 0
-
-        while num >= 100:
-            num = num / 10
-            count = count + 1
-        
-        num = int(num)
-        num = num * (10 ** count)
-        
-        print(num)
+        num = int(num / 100)
+        num = int(num * 100)
         self.file_info['dir'] = str(num)
 
     def load_code(self):
